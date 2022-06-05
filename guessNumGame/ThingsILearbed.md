@@ -5,3 +5,4 @@
 3. keyboardType property controls which keyboard opens
 4. expo has an extra package called expo-linear-gradient
    --- expo install expo-linear-gradient
+5. For the background image you can use a component from react called ImageBackground. ImageBackground is under the hood a combination of View and Image component which is it can take a style and image style prop.
