@@ -7,3 +7,4 @@
    --- expo install expo-linear-gradient
 5. For the background image you can use a component from react called ImageBackground. ImageBackground is under the hood a combination of View and Image component which is it can take a style and image style prop.
 6. What we get from the TextInput will always be a string
+7. React Native has an Alert API
