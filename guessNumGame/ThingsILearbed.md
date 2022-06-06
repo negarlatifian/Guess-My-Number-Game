@@ -11,3 +11,8 @@
 8. SafeAreaView detects the device and adds the needed space from the top of the screen
 9. expo has a package that allows us to use icons:
    --- import {} from '@expo/vector-icons'
+10. In order to use custom fonnts you have to install a package:
+    --- expo install expo-font
+    --- import { useFonts } from "expo-font";
+11. In order to show a loading screen :
+    --- expo install expo-app-loading
