@@ -9,3 +9,5 @@
 6. What we get from the TextInput will always be a string
 7. React Native has an Alert API
 8. SafeAreaView detects the device and adds the needed space from the top of the screen
+9. expo has a package that allows us to use icons:
+   --- import {} from '@expo/vector-icons'
