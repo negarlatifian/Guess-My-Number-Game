@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, FlatList } from "react-native";
 import NumberContainer from "../components/game/NumberContainer";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
@@ -21,11 +21,18 @@ let maxBoundry = 100;
 const GameScreen = ({ userNumber, onGameOver }) => {
   const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+  const [guessRounds, setGuessRounds] = useState([initialGuess]);
   useEffect(() => {
     if (currentGuess === userNumber) {
       onGameOver();
     }
   }, [currentGuess, userNumber, initialGuess]);
+  // When we leave the dependancy of the below useEffect empty it means that this function will be called when ever this screen
+  //  is rendered for the first time not when for example a new guess is made
+  useEffect(() => {
+    minBoundry = 1;
+    maxBoundry = 100;
+  }, []);
   const nextGuessHandler = (direction) => {
     if (
       (direction === "lower" && currentGuess < userNumber) ||
@@ -47,6 +54,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
       currentGuess
     );
     setCurrentGuess(newRandomNum);
+    setGuessRounds((prevGuessNum) => [...prevGuessNum, newRandomNum]);
   };
   return (
     <View style={styles.screen}>
@@ -70,7 +78,14 @@ const GameScreen = ({ userNumber, onGameOver }) => {
         </View>
       </Card>
       <View>
-        <Text>Log Rounds</Text>
+        {/* {guessRounds.map((guess) => (
+          <Text key={guess}>{guess}</Text>
+        ))} */}
+        <FlatList
+          data={guessRounds}
+          renderItem={(itemData) => <Text>{itemData.item}</Text>}
+          keyExtractor={(item) => item}
+        />
       </View>
     </View>
   );
