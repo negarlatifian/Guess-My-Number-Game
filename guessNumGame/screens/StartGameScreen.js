@@ -24,6 +24,7 @@ const StartGameScreen = ({ onPickNumber }) => {
       );
       return;
     }
+
     onPickNumber(chosenNumber);
   };
   return (
