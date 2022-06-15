@@ -25,7 +25,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
   const [guessRounds, setGuessRounds] = useState([initialGuess]);
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOver();
+      onGameOver(guessRounds.length);
     }
   }, [currentGuess, userNumber, initialGuess]);
   // When we leave the dependancy of the below useEffect empty it means that this function will be called when ever this screen
@@ -81,7 +81,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
           </View>
         </View>
       </Card>
-      <View>
+      <View style={styles.listContainer}>
         {/* {guessRounds.map((guess) => (
           <Text key={guess}>{guess}</Text>
         ))} */}
@@ -112,6 +112,10 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 16,
   },
 });
 export default GameScreen;
