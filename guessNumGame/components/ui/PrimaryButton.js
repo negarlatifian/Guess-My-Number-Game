@@ -1,9 +1,13 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import Colors from "../../constants/colors";
 
 const PrimaryButton = ({ children, onPress }) => {
   return (
-    <View style={styles.buttonOuterContainer}>
+    <LinearGradient
+      colors={["#6a68ea", "#9334f4"]}
+      style={styles.buttonOuterContainer}
+    >
       <Pressable
         android_ripple={{ color: Colors.primary600 }}
         style={({ pressed }) =>
@@ -15,7 +19,7 @@ const PrimaryButton = ({ children, onPress }) => {
       >
         <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -26,9 +30,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   buttonInnerContainer: {
-    backgroundColor: Colors.primary500,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
+    // backgroundColor: Colors.primary500,
+    borderRadius: 28,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
     elevation: 2,
   },
   buttonText: {

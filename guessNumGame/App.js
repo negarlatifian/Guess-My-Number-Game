@@ -54,10 +54,7 @@ export default function App() {
     );
   }
   return (
-    <LinearGradient
-      colors={[Colors.primary700, Colors.accent500]}
-      style={styles.rootScreen}
-    >
+    <LinearGradient colors={["#353dfd", "#9112f1"]} style={styles.rootScreen}>
       <ImageBackground
         source={require("./assets/images/background.png")}
         resizeMode="cover"

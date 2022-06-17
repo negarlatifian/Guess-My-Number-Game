@@ -1,15 +1,21 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { View, StyleSheet } from "react-native";
 import Colors from "../../constants/colors";
 
 const Card = ({ children }) => {
-  return <View style={styles.card}>{children}</View>;
+  return (
+    <LinearGradient colors={["#868afe", "#9b9efe"]} style={styles.card}>
+      {children}
+    </LinearGradient>
+  );
 };
 
 const styles = StyleSheet.create({
   card: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 16,
+    paddingVertical: 25,
+    paddingHorizontal: 70,
     marginTop: 100,
     marginHorizontal: 24,
     borderRadius: 8,
