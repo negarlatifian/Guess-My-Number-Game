@@ -11,15 +11,18 @@ const NumberContainer = ({ children }) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 4,
-    borderColor: Colors.accent500,
+    // borderWidth: 4,
+    // borderColor: Colors.accent500,
     padding: 24,
-    borderRadius: 8,
+    paddingHorizontal: 28,
+    borderRadius: 50,
+    backgroundColor: "#868afe",
     margin: 24,
     alignItems: "center",
   },
   numberText: {
-    color: Colors.accent500,
+    color: "white",
+    // color: Colors.accent500,
     fontSize: 36,
     fontFamily: "open-sans-bold",
   },

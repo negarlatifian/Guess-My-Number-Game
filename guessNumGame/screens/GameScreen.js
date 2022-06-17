@@ -103,11 +103,12 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
-    marginTop: 40,
+    marginTop: 30,
     alignItems: "center",
   },
   InstructionText: {
     marginBottom: 12,
+    textAlign: "center",
   },
   buttonsContainer: {
     flexDirection: "row",

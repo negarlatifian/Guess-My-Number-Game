@@ -9,7 +9,7 @@ const GameOverScreen = ({ roundNumber, userNUmber, onStartNewGame }) => {
       <Title>GAME OVER!</Title>
       <View style={styles.imageContainer}>
         <Image
-          source={require("../assets/images/success.png")}
+          source={require("../assets/images/target.png")}
           style={styles.imageStyle}
         />
       </View>
@@ -31,27 +31,29 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    borderRadius: 150,
-    width: 300,
-    height: 300,
-    borderWidth: 3,
-    borderColor: Colors.primary800,
+    // borderRadius: 150,
+    alignItems: "center",
+    width: 400,
+    height: 400,
+    // borderWidth: 3,
+    // borderColor: Colors.primary800,
     overflow: "hidden",
-    margin: 36,
+    margin: 10,
   },
   imageStyle: {
-    width: "100%",
-    height: "100%",
+    width: "90%",
+    height: "90%",
   },
   summaryText: {
     fontFamily: "open-sans",
     fontSize: 24,
     textAlign: "center",
     marginBottom: 24,
+    color: "white",
   },
   highlight: {
     fontFamily: "open-sans-bold",
-    color: Colors.primary500,
+    color: "#e64b68",
   },
 });
 
